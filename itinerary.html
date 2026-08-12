@@ -17,6 +17,7 @@
     .verdict{background:#173d35;color:#e6f1ed;border-radius:27px;padding:30px;margin:56px 0}.verdict h2{font-family:Georgia,"Noto Serif TC",serif;margin:0 0 8px}.verdict p{color:#bfd3cc;font-size:14px}.verdict a{display:inline-block;margin-top:7px;text-decoration:none;background:#fff;color:#173d35;border-radius:11px;padding:9px 14px;font-size:11px;font-weight:900}footer{text-align:center;color:var(--muted);font-size:12px;padding:8px 0 44px}[hidden]{display:none!important}
     @media(max-width:780px){.stay-line{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:9px}.plan-head{display:block}.score{display:inline-block;margin-top:16px}.day{grid-template-columns:1fr;gap:6px}}@media(max-width:520px){.site-switch{top:7px;right:7px;padding:4px}.site-switch a{padding:6px 6px;font-size:9px}.hero{min-height:550px}.notice{grid-template-columns:1fr}.plan-head,.days{padding-left:20px;padding-right:20px}.route{align-items:flex-start}.route a{max-width:100%}}
   </style>
+  <style>.back-top{position:fixed;right:18px;bottom:18px;z-index:40;border:0;border-radius:999px;background:var(--pine);color:#fff;padding:11px 15px;font:inherit;font-size:12px;font-weight:900;box-shadow:0 10px 28px rgba(23,51,45,.28);cursor:pointer;opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s}.back-top.show{opacity:1;visibility:visible;transform:none}.back-top:focus-visible{outline:3px solid #f3c878;outline-offset:3px}</style>
 </head>
 <body>
   <nav class="site-switch" aria-label="網站內容"><a href="./">景點圖鑑</a><a href="hotels.html">住宿 30 間</a><a class="active" href="itinerary.html">三種行程</a><a href="stories.html">旅途故事</a><a href="info.html">其他資訊</a></nav>
@@ -53,5 +54,7 @@
   <script>
     const tabs=[...document.querySelectorAll('.tab')],plans=[...document.querySelectorAll('.plan')];tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.toggle('active',x===t));const key=t.dataset.show;plans.forEach(p=>p.hidden=key!=='all'&&p.dataset.plan!==key)}));
   </script>
+  <button class="back-top" type="button" aria-label="回到最上方">↑ 回到最上方</button>
+  <script>const backTop=document.querySelector('.back-top');addEventListener('scroll',()=>backTop.classList.toggle('show',scrollY>500),{passive:true});backTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));</script>
 </body>
 </html>
