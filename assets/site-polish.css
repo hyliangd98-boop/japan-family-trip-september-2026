@@ -1,0 +1,27 @@
+:root{--site-focus:#f3b34c}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+button,input,select,textarea{font:inherit}
+a,button{-webkit-tap-highlight-color:transparent}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--site-focus);outline-offset:3px}
+.site-switch{max-width:calc(100vw - 28px);overscroll-behavior-x:contain;scrollbar-width:none}
+.site-switch::-webkit-scrollbar{display:none}
+.site-switch a[aria-current="page"]{background:var(--pine,#174f43);color:#fff}
+main section,[id]{scroll-margin-top:82px}
+img{background:#e8ece9}
+img[loading="lazy"]{content-visibility:auto}
+.image-unavailable{filter:grayscale(1);opacity:.55}
+.back-top{z-index:35;cursor:pointer;min-height:42px}
+.skip-link{position:fixed;z-index:100;top:8px;left:8px;padding:10px 14px;border-radius:10px;background:#fff;color:#17332d;font-weight:900;text-decoration:none;transform:translateY(-150%);box-shadow:0 8px 25px rgba(0,0,0,.2)}
+.skip-link:focus{transform:none}
+.legacy-home{position:fixed;z-index:45;top:14px;left:14px;padding:9px 13px;border-radius:999px;background:#fff;color:#174f43;font-size:11px;font-weight:900;text-decoration:none;box-shadow:0 8px 24px rgba(23,51,45,.16)}
+.hero h1,.hero p{text-wrap:balance}
+.sources,.desc,.content p,.story-body p{overflow-wrap:anywhere}
+@media(max-width:650px){
+  .site-switch{max-width:none;scroll-snap-type:x proximity;padding-bottom:5px!important}
+  .site-switch a{scroll-snap-align:start;min-height:32px;display:inline-flex;align-items:center}
+  .hero-inner{padding-top:max(96px,calc(72px + env(safe-area-inset-top)))!important}
+  .section-head h2{font-size:clamp(28px,9vw,38px)!important}
+  .back-top{right:12px!important;bottom:calc(12px + env(safe-area-inset-bottom))!important;padding:10px 13px!important;font-size:11px}
+  .legacy-home{top:8px;left:8px;font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
